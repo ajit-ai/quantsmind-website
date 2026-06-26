@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "deploy": "ng deploy --base-href=\"https://github.com/ajit-ai/quantsmind-website.git\" && cp dist/quantsmind-website/index.html dist/quantsmind-website/browser/404.html",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  
   "prettier": {
     "printWidth": 100,
     "singleQuote": true,
