@@ -129,11 +129,11 @@ export class ServicesComponent {
       id: 'software',
       badge: 'Custom Engineering',
       title: 'Software Development',
-      desc: 'Developing robust, low-latency applications using Rust, Go, and TypeScript. Real-time analytic boards and performant database architectures.',
+      desc: 'Developing robust, low-latency applications using Python, Java, C++, Rust, Go, TypeScript and other. Real-time analytic boards and performant database architectures.',
       borderHoverClass: 'hover:border-indigo-500/30',
       iconBgClass: 'bg-indigo-500/10 text-indigo-400',
       accentClass: 'text-indigo-400',
-      features: ['Rust & Go High-Performance Systems', 'Real-Time Analytic Dashboards', 'Microservice Architectures', 'Bespoke Corporate Tools'],
+      features: ['Python & Java High-Performance Systems', 'Real-Time Analytic Dashboards', 'Microservice Architectures', 'Bespoke Corporate Tools'],
       icon: ''
     }
   ];
