@@ -69,11 +69,11 @@ import { RouterLink } from '@angular/router';
 
           <!-- Contact / Newsletter -->
           <div>
-            <h3 class="text-sm font-semibold text-white tracking-widest uppercase mb-6 font-display">Connect</h3>
+            <h3 class="text-sm font-semibold text-white tracking-widest uppercase mb-6 font-display">Contact</h3>
             <ul class="space-y-3 mb-6 text-sm text-gray-400">
               <li class="flex items-center">
                 <svg class="w-4 h-4 mr-2 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.502-5.132-3.811-6.634-6.634l1.293-.97c.362-.271.528-.733.417-1.173L6.763 3.69c-.125-.501-.575-.852-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-                <a href="tel:+18005550199" class="hover:text-cyan-400 transition-colors"> 28/85,Shikargarh, Uchiyarda Road, Jodhpur, Rajasthan 342015</a>
+                <a href="Address" class="hover:text-cyan-400 transition-colors">28/85,Shikargarh, Uchiyarda Road, Jodhpur, Rajasthan 342015</a>
               </li>
               <li class="flex items-center">
                 <svg class="w-4 h-4 mr-2 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.502-5.132-3.811-6.634-6.634l1.293-.97c.362-.271.528-.733.417-1.173L6.763 3.69c-.125-.501-.575-.852-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
