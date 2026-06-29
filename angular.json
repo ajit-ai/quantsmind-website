@@ -26,8 +26,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/ads.txt"
             ],
+            
             "styles": [
               "src/styles.css"
             ]
