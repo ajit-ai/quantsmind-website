@@ -52,7 +52,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
                 </div>
                 <div>
                   <span class="text-[10px] font-mono text-gray-500 block uppercase">Email</span>
-                  <span class="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">info&#64;quantsmind.com</span>
+                  <span class="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">ajitkumar&#64;quantsmind.com</span>
                 </div>
               </a>
 
