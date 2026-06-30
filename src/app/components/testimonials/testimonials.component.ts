@@ -25,12 +25,12 @@ interface TestimonialItem {
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-xs font-semibold text-cyan-400 tracking-widest uppercase mb-3 font-display">Client Endorsements</h2>
+          <h2 class="text-xs font-semibold text-cyan-400 tracking-widest uppercase mb-3 font-display">Leadership Trust</h2>
           <p class="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white mb-6">
-            Trusted by Engineering Leaders
+            Trusted by engineering teams driving progress
           </p>
           <p class="text-gray-400 font-light leading-relaxed">
-            Discover how global CTOs and quantitative researchers utilize our developer tools and custom software builds to solve their operational bottlenecks.
+            See how technical leaders rely on our platforms and systems to remove bottlenecks, improve throughput, and move faster with confidence.
           </p>
         </div>
 
@@ -52,7 +52,8 @@ interface TestimonialItem {
         <!-- Grid Container -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           @for (item of filteredTestimonials(); track item.author) {
-            <div class="glass-panel rounded-2xl p-8 flex flex-col justify-between border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
+            <div class="glass-panel rounded-2xl p-8 flex flex-col justify-between border border-white/10 hover:border-cyan-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl relative overflow-hidden">
+              <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-violet-500 opacity-80"></div>
               <!-- Rating / Quote icon -->
               <div class="flex items-center justify-between mb-6">
                 <!-- Stars -->
@@ -86,6 +87,7 @@ interface TestimonialItem {
                 <div>
                   <h4 class="text-sm font-semibold text-white">{{ item.author }}</h4>
                   <p class="text-xs text-gray-500 font-light mt-0.5">{{ item.role }}, <span class="text-cyan-400 font-medium">{{ item.company }}</span></p>
+                  <span class="inline-flex mt-2 items-center rounded-full bg-white/5 px-2.5 py-1 text-[10px] uppercase tracking-widest text-gray-400">{{ item.sector }}</span>
                 </div>
               </div>
             </div>

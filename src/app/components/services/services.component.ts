@@ -27,12 +27,12 @@ interface ServiceItem {
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-20">
-          <h2 class="text-xs font-semibold text-cyan-400 tracking-widest uppercase mb-3 font-display">Specialized Capabilities</h2>
+          <h2 class="text-xs font-semibold text-cyan-400 tracking-widest uppercase mb-3 font-display">Engineering Capabilities</h2>
           <p class="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white mb-6">
-            Pioneering Technical Solutions
+            Advanced systems engineered for scale
           </p>
           <p class="text-gray-400 font-light leading-relaxed">
-            We deliver industry-leading technological advancements that accelerate analytical workloads, optimize business workflows, and scale robust architectures.
+            We deliver industry-leading technology that accelerates analytical workloads, optimizes workflow automation, and scales enterprise-grade architectures.
           </p>
         </div>
 
@@ -40,9 +40,10 @@ interface ServiceItem {
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           @for (service of services; track service.id) {
             <div 
-              class="glass-panel glass-panel-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative group overflow-hidden"
+              class="glass-panel glass-panel-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative group overflow-hidden hover:-translate-y-1 hover:shadow-2xl"
               [class]="service.borderHoverClass"
             >
+              <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-violet-500 opacity-80"></div>
               <!-- Card Top -->
               <div>
                 <!-- Icon Outer Wrapper -->

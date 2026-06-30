@@ -72,16 +72,16 @@ import { RouterLink } from '@angular/router';
             <h3 class="text-sm font-semibold text-white tracking-widest uppercase mb-6 font-display">Contact</h3>
             <ul class="space-y-3 mb-6 text-sm text-gray-400">
               <li class="flex items-center">
-                <svg class="w-4 h-4 mr-2 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.502-5.132-3.811-6.634-6.634l1.293-.97c.362-.271.528-.733.417-1.173L6.763 3.69c-.125-.501-.575-.852-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-                <a href="Address" class="hover:text-cyan-400 transition-colors">28/85,Shikargarh, Uchiyarda Road, Jodhpur, Rajasthan 342015</a>
+                <svg class="w-4 h-4 mr-2 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.418 0-8-3.582-8-8 0-3.314 2.686-6 6-6 1.657 0 3.157.672 4.243 1.757A5.973 5.973 0 0118 13c0 4.418-3.582 8-8 8z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+                <a href="https://maps.google.com?q=28/85,+Shikargarh,+Uchiyarda+Road,+Jodhpur,+Rajasthan+342015" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">Plot 28, Shikargarh, Jodhpur, Rajasthan 342015</a>
               </li>
               <li class="flex items-center">
                 <svg class="w-4 h-4 mr-2 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.502-5.132-3.811-6.634-6.634l1.293-.97c.362-.271.528-.733.417-1.173L6.763 3.69c-.125-.501-.575-.852-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-                <a href="tel:+18005550199" class="hover:text-cyan-400 transition-colors">+1 (800) 555-0199</a>
+                <a href="tel:+8956941357" class="hover:text-cyan-400 transition-colors">+91 (895) 694-1357</a>
               </li>
               <li class="flex items-center">
                 <svg class="w-4 h-4 mr-2 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                <a href="mailto:info&#64;quantsmind.com" class="hover:text-cyan-400 transition-colors">info&#64;quantsmind.com</a>
+                <a href="mailto:ajitkumar&#64;quantsmind.com" class="hover:text-cyan-400 transition-colors">info&#64;quantsmind.com</a>
               </li>
               <li class="flex items-center">
                 <svg class="w-4 h-4 mr-2 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
@@ -93,9 +93,10 @@ import { RouterLink } from '@angular/router';
 
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500">
           <p>&copy; 2026 QuantsMind. All rights reserved. www.QuantsMind.com</p>
-          <div class="flex space-x-6 mt-4 sm:mt-0">
-            <a class="hover:text-white transition-colors cursor-pointer">Privacy Policy</a>
-            <a class="hover:text-white transition-colors cursor-pointer">Terms of Service</a>
+          <div class="flex flex-wrap items-center gap-4 mt-4 sm:mt-0">
+            <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            <span class="text-gray-500">Follow us on LinkedIn</span>
           </div>
         </div>
       </div>

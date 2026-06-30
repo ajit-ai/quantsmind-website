@@ -73,12 +73,112 @@ body {
   50% { filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.6)); }
 }
 
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, 10px); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(10px, -8px); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes wave {
+  0% { transform: translateX(-12%); opacity: 0.3; }
+  50% { transform: translateX(12%); opacity: 0.65; }
+  100% { transform: translateX(-12%); opacity: 0.3; }
+}
+
+@keyframes pulse-fast {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes particle-glow {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.8); }
+}
+
+@keyframes interference {
+  0% { transform: translateX(0) scaleX(0.95); opacity: 0.45; }
+  50% { transform: translateX(10px) scaleX(1.05); opacity: 0.85; }
+  100% { transform: translateX(0) scaleX(0.95); opacity: 0.45; }
+}
+
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.animate-particle-glow {
+  animation: particle-glow 4.8s ease-in-out infinite;
+}
+
+.animate-interference {
+  animation: interference 3.2s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 5s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 5.2s ease-in-out infinite;
+}
+
+.animate-pulse-fast {
+  animation: pulse-fast 2.4s ease-in-out infinite;
+}
+
+.animate-interference {
+  animation: interference 3.2s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow-reverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
 .animate-pulse-slow {
   animation: pulse-slow 8s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: drift 10s ease-in-out infinite;
+}
+
+.animate-sway {
+  animation: sway 9s ease-in-out infinite;
+}
+
+.animate-progress {
+  animation: progress 4s ease-in-out infinite;
+}
+
+.animate-delay-1000 {
+  animation-delay: 0.8s;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 20s linear infinite;
 }
 
 .animate-glow-slow {

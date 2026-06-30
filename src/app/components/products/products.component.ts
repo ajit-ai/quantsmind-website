@@ -28,19 +28,20 @@ interface ProductItem {
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-20">
-          <h2 class="text-xs font-semibold text-indigo-400 tracking-widest uppercase mb-3 font-display">Product Ecosystem</h2>
+          <h2 class="text-xs font-semibold text-indigo-400 tracking-widest uppercase mb-3 font-display">Execution Platform</h2>
           <p class="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white mb-6">
-            Computational Infrastructure
+            Runtime environments built for modern research
           </p>
           <p class="text-gray-400 font-light leading-relaxed">
-            Our specialized suite of proprietary libraries and execution environments enables enterprise teams to test, deploy, and scale high-performance models.
+            Our proprietary libraries and execution layers enable enterprise teams to develop, test, and scale high-performance AI and optimization models.
           </p>
         </div>
 
         <!-- Products Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           @for (prod of products; track prod.id) {
-            <div class="glass-panel rounded-2xl border border-white/10 flex flex-col justify-between overflow-hidden group">
+            <div class="glass-panel rounded-2xl border border-white/10 flex flex-col justify-between overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+              <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-violet-500 opacity-80"></div>
               <!-- Header Visual -->
               <div class="h-48 relative overflow-hidden bg-gradient-to-br" [class]="prod.bgGradClass">
                 <div class="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>
@@ -67,7 +68,7 @@ interface ProductItem {
 
                 <button 
                   (click)="openModal(prod)"
-                  class="w-full py-3 px-4 rounded-xl text-xs font-semibold text-white bg-white/5 border border-white/10 hover:border-cyan-500/30 hover:bg-cyan-500/10 transition-all duration-300 text-center cursor-pointer group-hover:bg-cyan-500/5"
+                  class="w-full py-3 px-4 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 via-indigo-500 to-violet-500 hover:from-cyan-400 hover:via-indigo-400 hover:to-violet-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-center cursor-pointer"
                 >
                   Launch Sandbox Monitor
                 </button>

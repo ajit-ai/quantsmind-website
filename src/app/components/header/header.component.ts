@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   template: `
     <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/5 bg-[#0a0b10]/75 backdrop-blur-md">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,6 +40,8 @@ import { CommonModule } from '@angular/common';
               <a 
                 [routerLink]="item.link" 
                 [fragment]="item.fragment"
+                routerLinkActive="text-white"
+                [routerLinkActiveOptions]="{ exact: true }"
                 class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors duration-200 cursor-pointer"
               >
                 {{ item.label }}
@@ -48,10 +50,10 @@ import { CommonModule } from '@angular/common';
             <a 
               [routerLink]="['/']" 
               fragment="contact"
-              class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-semibold text-white rounded-lg group bg-gradient-to-br from-cyan-500 to-indigo-500 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-cyan-800"
+              class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-semibold text-white rounded-lg group bg-gradient-to-br from-cyan-500 to-indigo-500 hover:text-white focus:ring-2 focus:outline-none focus:ring-cyan-800"
             >
               <span class="relative px-4 py-2 transition-all ease-in duration-75 bg-[#0a0b10] rounded-md group-hover:bg-opacity-0">
-                Get Started
+                Book a Call
               </span>
             </a>
           </nav>
@@ -133,9 +135,9 @@ export class HeaderComponent {
   navItems = [
     { label: 'Home', link: ['/'], fragment: 'top' },
     { label: 'Services', link: ['/'], fragment: 'services' },
-    { label: 'Products', link: ['/'], fragment: 'products' },
-    { label: 'Testimonials', link: ['/'], fragment: 'testimonials' },
-    { label: 'Research', link: ['/research'] },
+    { label: 'Ecosystem', link: ['/'], fragment: 'products' },
+    { label: 'Clients', link: ['/'], fragment: 'testimonials' },
+    { label: 'Labs', link: ['/research'] },
     { label: 'Contact', link: ['/'], fragment: 'contact' }
   ];
 
