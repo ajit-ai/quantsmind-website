@@ -14,6 +14,14 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/research-detail/research-detail.component').then(m => m.ResearchDetailComponent)
   },
   {
+    path: 'services/:id',
+    loadComponent: () => import('./pages/service-detail/service-detail.component').then(m => m.ServiceDetailComponent)
+  },
+  {
+    path: 'ecosystem/:id',
+    loadComponent: () => import('./pages/ecosystem-detail/ecosystem-detail.component').then(m => m.EcosystemDetailComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

@@ -30,19 +30,6 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 
             <!-- Communication Blocks -->
             <div class="space-y-6">
-              <!-- Tel -->
-              <a href="tel:+918956941357" class="flex items-center p-4 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/20 hover:bg-cyan-500/5 transition-all duration-300 group">
-                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center mr-4 transition-transform duration-300 group-hover:scale-110">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.502-5.132-3.811-6.634-6.634l1.293-.97c.362-.271.528-.733.417-1.173L6.763 3.69c-.125-.501-.575-.852-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
-                  </svg>
-                </div>
-                <div>
-                  <span class="text-[10px] font-mono text-gray-500 block uppercase">Call Us</span>
-                  <span class="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">+91 (895) 694-1357</span>
-                </div>
-              </a>
-
               <!-- Email -->
               <a href="mailto:ajitkumar&#64;quantsmind.com" class="flex items-center p-4 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/20 hover:bg-cyan-500/5 transition-all duration-300 group">
                 <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center mr-4 transition-transform duration-300 group-hover:scale-110">
@@ -53,20 +40,6 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
                 <div>
                   <span class="text-[10px] font-mono text-gray-500 block uppercase">Email</span>
                   <span class="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">ajitkumar&#64;quantsmind.com</span>
-                </div>
-              </a>
-
-              <!-- WhatsApp -->
-              <a href="https://wa.me/18005550199?text=Hello%20QuantsMind" target="_blank" rel="noopener noreferrer" class="flex items-center p-4 rounded-xl bg-white/5 border border-white/5 hover:border-emerald-500/20 hover:bg-emerald-500/5 transition-all duration-300 group">
-                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mr-4 transition-transform duration-300 group-hover:scale-110">
-                  <!-- Custom WhatsApp icon -->
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C6.48 2 2 6.48 2 12c0 2.17.7 4.19 1.9 5.86L2.6 22.3l4.57-1.3C8.68 21.6 10.29 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.46 0-2.85-.35-4.11-1l-.29-.17-2.73.78.79-2.61-.19-.3A7.95 7.95 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/>
-                  </svg>
-                </div>
-                <div>
-                  <span class="text-[10px] font-mono text-gray-500 block uppercase">Instant Messaging</span>
-                  <span class="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">Chat on WhatsApp</span>
                 </div>
               </a>
 

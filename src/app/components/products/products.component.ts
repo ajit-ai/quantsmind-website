@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 interface ProductItem {
   id: string;
@@ -17,7 +18,7 @@ interface ProductItem {
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <section id="products" class="py-24 bg-[#08090d] border-t border-white/5 relative">
       <!-- Glow backgrounds -->
@@ -66,12 +67,20 @@ interface ProductItem {
                   </div>
                 </div>
 
-                <button 
-                  (click)="openModal(prod)"
-                  class="w-full py-3 px-4 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 via-indigo-500 to-violet-500 hover:from-cyan-400 hover:via-indigo-400 hover:to-violet-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-center cursor-pointer"
-                >
-                  Launch Sandbox Monitor
-                </button>
+                <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <a
+                    [routerLink]="['/ecosystem', prod.id]"
+                    class="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center text-xs font-semibold text-gray-100 transition-colors duration-300 hover:bg-white/10 hover:text-white"
+                  >
+                    View Details
+                  </a>
+                  <button 
+                    (click)="openModal(prod)"
+                    class="rounded-xl bg-gradient-to-r from-cyan-500 via-indigo-500 to-violet-500 px-4 py-3 text-center text-xs font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:from-cyan-400 hover:via-indigo-400 hover:to-violet-400"
+                  >
+                    Sandbox
+                  </button>
+                </div>
               </div>
             </div>
           }
