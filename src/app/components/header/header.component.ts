@@ -84,8 +84,8 @@ interface NavItem {
                 </a>
 
                 @if (item.children) {
-                  <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 absolute left-1/2 top-full z-50 w-[25rem] -translate-x-1/2 rounded-xl border border-white/10 bg-[#0a0b10]/95 p-3 shadow-2xl shadow-cyan-950/30 backdrop-blur-xl transition-all duration-200">
-                    <div class="grid gap-2">
+                  <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 absolute left-1/2 top-full z-50 w-[40rem] max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-xl border border-white/10 bg-[#0a0b10]/95 p-3 shadow-2xl shadow-cyan-950/30 backdrop-blur-xl transition-all duration-200">
+                    <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
                       @for (child of item.children; track child.label) {
                         <a
                           [routerLink]="child.link"
@@ -205,24 +205,44 @@ export class HeaderComponent {
       pathPrefix: '/services',
       children: [
         {
-          label: 'AI Solutions & Models',
-          link: ['/services', 'ai'],
-          description: 'Production AI models, RAG systems, vision pipelines, and MLOps.'
+          label: 'Space Science & Deep Space',
+          link: ['/services', 'space-science'],
+          description: 'Interplanetary mission planning, navigation, and autonomous swarm coordination.'
         },
         {
-          label: 'Quantum Algorithms R&D',
-          link: ['/services', 'quantum'],
-          description: 'Quantum-ready optimization, simulation, and post-quantum research.'
+          label: 'Cosmic Data & Earth Observation',
+          link: ['/services', 'cosmic-data'],
+          description: 'Petabyte-scale sensing, anomaly detection, and quantum-enhanced image analysis.'
         },
         {
-          label: 'Cloud-Native Architecture',
-          link: ['/services', 'cloud'],
-          description: 'Secure Kubernetes, serverless, data, and observability platforms.'
+          label: 'Bio-Pharma & Molecular Intelligence',
+          link: ['/services', 'biopharma'],
+          description: 'Protein folding, docking, therapeutics, and real-time molecular simulation.'
         },
         {
-          label: 'Software Development',
-          link: ['/services', 'software'],
-          description: 'Low-latency apps, dashboards, APIs, and enterprise workflow tools.'
+          label: 'Quantitative Finance & Risk',
+          link: ['/services', 'finance'],
+          description: 'Monte Carlo simulation, arbitrage modeling, and live market volatility analysis.'
+        },
+        {
+          label: 'Supply Chain & Logistics',
+          link: ['/services', 'logistics'],
+          description: 'Global routing, fleet optimization, and combinatorial planning under uncertainty.'
+        },
+        {
+          label: 'Energy & Smart Grid Balancing',
+          link: ['/services', 'energy'],
+          description: 'Renewable dispatch, regional energy orchestration, and grid resilience.'
+        },
+        {
+          label: 'Cybersecurity & Data Integrity',
+          link: ['/services', 'cybersecurity'],
+          description: 'Post-quantum protection, telemetry shielding, and satellite-safe encryption.'
+        },
+        {
+          label: 'Industrial Integration Hub',
+          link: ['/services', 'integration'],
+          description: 'Bridge legacy stacks into quantum-ready cloud ecosystems with one API token.'
         }
       ]
     },

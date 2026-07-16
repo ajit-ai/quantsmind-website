@@ -15,6 +15,11 @@ interface ServiceDetail {
   deliverables: string[];
   useCases: { title: string; desc: string; icon: string }[];
   techStack: string[];
+  industryFocus?: string;
+  problem?: string;
+  serviceRecommended?: string;
+  headline?: string;
+  subheading?: string;
 }
 
 @Component({
@@ -91,6 +96,51 @@ interface ServiceDetail {
                 <div class="flex flex-wrap gap-2">
                   @for (tech of service()!.techStack; track tech) {
                     <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-gray-300">{{ tech }}</span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-20">
+          <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div class="rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/8 to-white/4 p-8 shadow-2xl shadow-cyan-950/20 sm:p-10">
+              <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-cyan-400">Mission Focus</p>
+                  <h3 class="text-2xl font-bold text-white">Operational context and recommended path</h3>
+                </div>
+                @if (service()!.serviceRecommended) {
+                  <div class="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-300">
+                    {{ service()!.serviceRecommended }}
+                  </div>
+                }
+              </div>
+
+              <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+                <div class="space-y-5">
+                  @if (service()!.industryFocus) {
+                    <div>
+                      <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-gray-500">Industry Focus</p>
+                      <p class="text-sm leading-7 text-gray-300">{{ service()!.industryFocus }}</p>
+                    </div>
+                  }
+                  @if (service()!.problem) {
+                    <div>
+                      <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-gray-500">The Problem</p>
+                      <p class="text-sm leading-7 text-gray-300">{{ service()!.problem }}</p>
+                    </div>
+                  }
+                </div>
+
+                <div class="rounded-2xl border border-white/10 bg-[#080910]/80 p-6">
+                  @if (service()!.headline) {
+                    <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-gray-500">Headline</p>
+                    <h4 class="mb-4 text-xl font-semibold text-white">{{ service()!.headline }}</h4>
+                  }
+                  @if (service()!.subheading) {
+                    <p class="text-sm leading-7 text-gray-400">{{ service()!.subheading }}</p>
                   }
                 </div>
               </div>
@@ -275,6 +325,350 @@ export class ServiceDetailComponent implements OnInit {
         { title: 'Cryptographic Hardening', desc: 'Enterprise migration planning for post-quantum cryptographic standards and key infrastructure.', icon: 'PQC' }
       ],
       techStack: ['Qiskit', 'Cirq', 'PennyLane', 'D-Wave Ocean', 'QuTiP', 'TensorNetwork', 'NumPy', 'SciPy', 'IBM Quantum', 'IonQ API', 'CUDA-Q', 'OpenFermion']
+    },
+    'space-science': {
+      id: 'space-science',
+      badge: 'Space Systems',
+      title: 'Space Science & Deep Space Exploration',
+      tagline: 'Hybrid quantum-classical solvers for interplanetary mission planning, autonomous navigation, and swarm coordination under extreme latency.',
+      accentText: 'text-cyan-400',
+      overview: 'We build mission-planning and autonomous navigation systems that model orbital mechanics, gravitational perturbations, and real-time telemetry while optimizing for safety, fuel, and timing.',
+      stats: [
+        { value: '90%', label: 'Planning Speedup' },
+        { value: '24/7', label: 'Autonomous Adjustments' },
+        { value: '1M+', label: 'Trajectory Scenarios' },
+        { value: 'μs', label: 'Signal Response' }
+      ],
+      capabilities: [
+        { title: 'Trajectory Optimization', desc: 'Model multi-body gravitation, debris avoidance, and deep-space navigation in one hybrid solver.' },
+        { title: 'Swarm Coordination', desc: 'Synchronize satellite fleets and probes around changing mission constraints and telemetry conditions.' },
+        { title: 'Autonomous Control', desc: 'Run real-time course corrections with low-latency decision engines and mission safety guardrails.' },
+        { title: 'Telemetry Intelligence', desc: 'Extract operational signals from noisy comms streams and turn them into actionable plans.' }
+      ],
+      engagement: [
+        { step: '01', title: 'Mission model', desc: 'Capture mission architecture, constraints, orbital assumptions, and communication limitations.' },
+        { step: '02', title: 'Simulation stack', desc: 'Prototype trajectory and swarm optimization models against realistic space scenarios.' },
+        { step: '03', title: 'Autonomy layer', desc: 'Deploy control logic, fallback rules, and telemetry processors into edge or cloud systems.' },
+        { step: '04', title: 'Flight operations', desc: 'Support validation, monitoring, and iteration for operational mission readiness.' }
+      ],
+      deliverables: [
+        'Trajectory optimization engine and mission simulation environment.',
+        'Autonomous decision layer with safety and failover controls.',
+        'Telemetry ingestion and anomaly detection workflows.',
+        'Mission readiness documentation and deployment playbooks.'
+      ],
+      useCases: [
+        { title: 'Interplanetary Missions', desc: 'Plan efficient routes and autonomous maneuvers for probes and orbiters.', icon: '🚀' },
+        { title: 'Satellite Swarms', desc: 'Coordinate fleets for observation, communications, and relays.', icon: '🛰️' },
+        { title: 'Deep Space Navigation', desc: 'Continuously adjust trajectories from delayed or noisy telemetry.', icon: '✨' }
+      ],
+      techStack: ['Python', 'Rust', 'NumPy', 'SciPy', 'Orbital Mechanics', 'TensorFlow', 'CUDA', 'ROS 2', 'Azure', 'AWS'],
+      industryFocus: 'Interplanetary mission design, satellite swarm management, and deep-space navigation.',
+      problem: 'Planning trajectories through complex gravitational fields while dynamically avoiding cosmic debris requires testing billions of real-time variables—a massive strain for classical networks, especially with communication lag.',
+      serviceRecommended: 'Quantum Machine Learning for Trajectory & Swarm Optimization',
+      headline: 'Navigating the Deep Cosmos via Subatomic Trajectories',
+      subheading: 'Reduce interplanetary mission planning timelines by up to 90%. Our hybrid quantum-classical solvers calculate infinite orbital, gravitational, and telemetry vectors simultaneously, enabling deep-space probes to execute autonomous, real-time course corrections.'
+    },
+    'cosmic-data': {
+      id: 'cosmic-data',
+      badge: 'Remote Sensing',
+      title: 'Cosmic Data Analysis & Earth Observation',
+      tagline: 'Quantum-enhanced signal processing for telescopes, orbital sensors, and climate intelligence at extreme scale.',
+      accentText: 'text-sky-400',
+      overview: 'We help science and climate teams turn raw sensing streams into actionable discoveries by combining high-throughput data pipelines with quantum-inspired pattern recognition.',
+      stats: [
+        { value: 'PB+', label: 'Data Throughput' },
+        { value: 'μs', label: 'Anomaly Detection' },
+        { value: '99.4%', label: 'Signal Recall' },
+        { value: '10x', label: 'Faster Review' }
+      ],
+      capabilities: [
+        { title: 'Pattern Recognition', desc: 'Isolate planetary signals, exoplanet candidates, and atmospheric anomalies from noisy data.' },
+        { title: 'Multi-Sensor Fusion', desc: 'Combine radar, optical, thermal, and spectroscopic feeds into coherent intelligence products.' },
+        { title: 'Climate Modeling', desc: 'Accelerate environmental forecasting and planetary change detection with hybrid analytics.' },
+        { title: 'Scientific Pipelines', desc: 'Build reproducible observation workflows for research teams and mission operations.' }
+      ],
+      engagement: [
+        { step: '01', title: 'Data audit', desc: 'Catalog raw data formats, quality issues, bandwidth constraints, and user requirements.' },
+        { step: '02', title: 'Signal model', desc: 'Design detection and classification workflows for targeted science and operations objectives.' },
+        { step: '03', title: 'Compute deployment', desc: 'Deploy inference services, storage architecture, and human review flows for scale.' },
+        { step: '04', title: 'Research refinement', desc: 'Tune performance metrics and enable continuous model improvements.' }
+      ],
+      deliverables: [
+        'Data processing pipeline for telescopes and orbital sensors.',
+        'Anomaly detection and classification models for scientific workflows.',
+        'Operational dashboard for monitoring critical signals and trends.',
+        'Reproducible notebook and deployment guide for research teams.'
+      ],
+      useCases: [
+        { title: 'Exoplanet Discovery', desc: 'Identify subtle candidates from massive observational datasets.', icon: '🔭' },
+        { title: 'Climate Monitoring', desc: 'Track atmospheric shifts, thermal anomalies, and environmental change.', icon: '🌍' },
+        { title: 'Planetary Science', desc: 'Draw insights from spectroscopy, imaging, and remote sensing streams.', icon: '🪐' }
+      ],
+      techStack: ['Python', 'PyTorch', 'OpenCV', 'Dask', 'Spark', 'PostgreSQL', 'Delta Lake', 'Jupyter', 'Kubernetes'],
+      industryFocus: 'Satellite imaging, astrobiology, exoplanet detection, and climate modeling.',
+      problem: 'Modern space telescopes and orbital sensors capture petabytes of raw, noisy data daily. Sifting through this cosmic noise to spot an exoplanet or track minute climate changes is painfully slow.',
+      serviceRecommended: 'Tensor-Quantum Image Pattern Recognition',
+      headline: 'Decoding the Universe from Petabytes of Noise',
+      subheading: 'Accelerate cosmic anomaly detection. By routing massive Earth-observation and deep-space telescope datasets through quantum neural networks, our software isolates critical planetary data, gravitational waves, and atmospheric variations in microseconds.'
+    },
+    biopharma: {
+      id: 'biopharma',
+      badge: 'Life Sciences',
+      title: 'Bio-Pharma & Molecular Intelligence',
+      tagline: 'Quantum-simulated molecular docking and therapeutic design for faster drug discovery and precision medicine.',
+      accentText: 'text-emerald-400',
+      overview: 'We build molecular intelligence pipelines that model atomic interactions, binding affinity, and protein dynamics with a quantum-informed simulation layer.',
+      stats: [
+        { value: 'Days', label: 'Drug Screening' },
+        { value: '99.8%', label: 'Binding Fidelity' },
+        { value: '10x', label: 'Simulation Speed' },
+        { value: '1M+', label: 'Molecular Variants' }
+      ],
+      capabilities: [
+        { title: 'Molecular Docking', desc: 'Simulate protein-ligand interactions and predict binding properties with high precision.' },
+        { title: 'Protein Folding', desc: 'Study protein structure and dynamics through physics-informed models and hybrid compute.' },
+        { title: 'Therapeutic Design', desc: 'Compare compound candidates, optimize lead selection, and support targeted development.' },
+        { title: 'Bioinformatics Workflows', desc: 'Connect genomics, proteomics, and assay data into continuous scientific pipelines.' }
+      ],
+      engagement: [
+        { step: '01', title: 'Target assessment', desc: 'Understand the molecular target, assay goals, and available experimental datasets.' },
+        { step: '02', title: 'Simulation design', desc: 'Create a hybrid compute workflow for docking, scoring, and candidate ranking.' },
+        { step: '03', title: 'Experiment integration', desc: 'Link outputs with lab systems, research notebooks, and decision workflows.' },
+        { step: '04', title: 'Scale and govern', desc: 'Operationalize the approach with reproducible results and model governance.' }
+      ],
+      deliverables: [
+        'Molecular simulation workflow for docking and affinity prediction.',
+        'Candidate ranking and lead selection reports.',
+        'Interoperable lab and research data pipelines.',
+        'Scientific notebooks and implementation documentation.'
+      ],
+      useCases: [
+        { title: 'Precision Medicine', desc: 'Model patient-specific targets and therapeutic response pathways.', icon: '🧬' },
+        { title: 'Proteomics', desc: 'Map molecular interactions and protein networks across large datasets.', icon: '🧪' },
+        { title: 'Drug Discovery', desc: 'Shorten discovery cycles from years to days for select programs.', icon: '💊' }
+      ],
+      techStack: ['Python', 'PyTorch', 'RDKit', 'OpenMM', 'NumPy', 'SciPy', 'Jupyter', 'Docker', 'Kubernetes'],
+      industryFocus: 'Precision medicine, proteomics, and molecular therapeutics.',
+      problem: 'Classical supercomputers take years to simulate molecular bonds and folding proteins, slowing drug development down to a crawl.',
+      serviceRecommended: 'Quantum-Simulated Molecular Docking',
+      headline: 'Accelerating Drug Discovery from Decades to Days',
+      subheading: 'Our simulation engine utilizes quantum mechanics to model atomic interactions in real time, enabling pharmaceutical pioneers to predict protein-ligand binding affinities with flawless precision.'
+    },
+    finance: {
+      id: 'finance',
+      badge: 'Markets',
+      title: 'Quantitative Finance & Risk Analysis',
+      tagline: 'Hybrid quantum-classical Monte Carlo engines for pricing, volatility modeling, and fraud detection at market speed.',
+      accentText: 'text-amber-400',
+      overview: 'We build risk and portfolio systems that evaluate thousands of market variables simultaneously so institutions can act on volatility before it becomes a crisis.',
+      stats: [
+        { value: '10x', label: 'Scenario Throughput' },
+        { value: 'Real-time', label: 'Risk Updates' },
+        { value: '99.9%', label: 'Model Stability' },
+        { value: '24/7', label: 'Monitoring' }
+      ],
+      capabilities: [
+        { title: 'Monte Carlo Simulation', desc: 'Scale derivative simulations and scenario analysis beyond classical runtimes.' },
+        { title: 'Portfolio Optimization', desc: 'Balance risk, liquidity, and expected return across dynamic market constraints.' },
+        { title: 'Fraud Detection', desc: 'Surface anomalies and suspicious activity in near-real time with streaming analytics.' },
+        { title: 'Market Intelligence', desc: 'Translate high-frequency signals into operational decisions and executive reporting.' }
+      ],
+      engagement: [
+        { step: '01', title: 'Risk landscape', desc: 'Map instruments, market constraints, governance rules, and critical decision loops.' },
+        { step: '02', title: 'Model design', desc: 'Build baseline simulations and identify high-value quantum or hybrid accelerations.' },
+        { step: '03', title: 'Deployment', desc: 'Operationalize workflows through secure APIs, data feeds, and monitoring.' },
+        { step: '04', title: 'Governance', desc: 'Embed explainability, controls, and approval processes into production decisioning.' }
+      ],
+      deliverables: [
+        'Risk and pricing simulation framework.',
+        'Portfolio optimization engine with live scenario analysis.',
+        'Fraud and anomaly monitoring workflows.',
+        'Operational documentation and compliance support.'
+      ],
+      useCases: [
+        { title: 'Asset Management', desc: 'Stress test portfolios and optimize allocations under change.', icon: '📈' },
+        { title: 'Derivative Pricing', desc: 'Run high-fidelity scenario modeling for complex financial products.', icon: '🧮' },
+        { title: 'Arbitrage Engines', desc: 'Detect and evaluate fast-moving market opportunities.', icon: '⚡' }
+      ],
+      techStack: ['Python', 'NumPy', 'SciPy', 'TensorFlow', 'Kafka', 'PostgreSQL', 'Redis', 'Grafana', 'Azure'],
+      industryFocus: 'Asset management, derivative pricing, and arbitrage mechanics.',
+      problem: 'Processing thousands of dynamic market variables simultaneously forces institutions to rely on heavily diluted, slow simulations.',
+      serviceRecommended: 'Quantum-Accelerated Monte Carlo Simulations',
+      headline: 'Decoding Market Volatility Before It Happens',
+      subheading: 'Shatter processing constraints. Deploy hybrid classical-quantum models to run deep risk-assessments, portfolio optimizations, and continuous fraud detection pipelines ahead of global market shifts.'
+    },
+    logistics: {
+      id: 'logistics',
+      badge: 'Operations',
+      title: 'Global Supply Chain & Logistics',
+      tagline: 'Combinatorial optimization for routed fleets, maritime shipping, and global distribution networks.',
+      accentText: 'text-indigo-400',
+      overview: 'We create optimization engines that solve the deepest routing and scheduling challenges across freight, warehousing, and last-mile delivery.',
+      stats: [
+        { value: 'Billions', label: 'Route Permutations' },
+        { value: 'Real-time', label: 'Replanning' },
+        { value: '30%', label: 'Fuel Reduction' },
+        { value: '40%', label: 'Delivery Improvement' }
+      ],
+      capabilities: [
+        { title: 'Route Optimization', desc: 'Solve multi-stop and network-wide routing problems under timing and capacity constraints.' },
+        { title: 'Constraint Planning', desc: 'Balance weather, capacity, cost, lead times, and disruptions across global logistics networks.' },
+        { title: 'Fleet Coordination', desc: 'Synchronize shipments, vessels, trucks, and resources without service degradation.' },
+        { title: 'Scenario Planning', desc: 'Recompute plans dynamically as new disruptions and demand signals emerge.' }
+      ],
+      engagement: [
+        { step: '01', title: 'Network mapping', desc: 'Capture routes, nodes, carriers, constraints, and service-level objectives.' },
+        { step: '02', title: 'Optimization model', desc: 'Translate the planning challenge into a performant combinatorial formulation.' },
+        { step: '03', title: 'Runtime deployment', desc: 'Integrate with dispatch systems, ERP layers, and live operational feeds.' },
+        { step: '04', title: 'Continuous tuning', desc: 'Iterate based on changing routing conditions and performance metrics.' }
+      ],
+      deliverables: [
+        'Optimization engine for fleet and route planning.',
+        'Live planning dashboards and decision surfaces.',
+        'Scenario simulation and disruption response tools.',
+        'Integration layer for enterprise operations platforms.'
+      ],
+      useCases: [
+        { title: 'Fleet Routing', desc: 'Reduce travel time and improve throughput for vehicle operations.', icon: '🚚' },
+        { title: 'Maritime Shipping', desc: 'Coordinate vessels and ports around dynamic travel conditions.', icon: '⚓' },
+        { title: 'Distribution Networks', desc: 'Optimize warehouses, depots, and fulfillment pathways globally.', icon: '📦' }
+      ],
+      techStack: ['Python', 'OR-Tools', 'NetworkX', 'NumPy', 'PostgreSQL', 'Kafka', 'FastAPI', 'React', 'Kubernetes'],
+      industryFocus: 'Fleet routing, maritime shipping, and dynamic distribution networks.',
+      problem: 'As variables grow, figuring out the absolute most efficient path for thousands of global shipments becomes mathematically impossible for binary machines.',
+      serviceRecommended: 'Combinatorial Optimization Engine (Q-Annealing Layer)',
+      headline: 'Solving the World’s Most Complex Gridlocks',
+      subheading: 'Transform chaotic global freight into synchronized precision. Our software instantly calculates billions of routing permutations to bypass supply disruptions, fuel inefficiencies, and delivery delays in real time.'
+    },
+    energy: {
+      id: 'energy',
+      badge: 'Infrastructure',
+      title: 'Energy Systems & Smart Grid Balancing',
+      tagline: 'Predictive orchestration for renewable energy, dispatch planning, and resilient grid operations.',
+      accentText: 'text-lime-400',
+      overview: 'We build energy intelligence systems that balance intermittent power sources with industrial demand while maximizing storage efficiency and grid stability.',
+      stats: [
+        { value: 'Real-time', label: 'Load Balancing' },
+        { value: '99.9%', label: 'Grid Stability' },
+        { value: '40%', label: 'Efficiency Gain' },
+        { value: '24/7', label: 'Forecasting' }
+      ],
+      capabilities: [
+        { title: 'Grid Forecasting', desc: 'Predict renewable generation, demand swings, and network constraints with high-fidelity models.' },
+        { title: 'Dispatch Orchestration', desc: 'Coordinate storage, generation, and demand response for resilient operations.' },
+        { title: 'Resource Planning', desc: 'Optimize infra investments, backup storage, and energy distribution strategies.' },
+        { title: 'Operations Dashboards', desc: 'Bring distributed field and control-room data into one visible operating picture.' }
+      ],
+      engagement: [
+        { step: '01', title: 'Grid assessment', desc: 'Understand generation mix, load profiles, constraints, and current control systems.' },
+        { step: '02', title: 'Forecast model', desc: 'Design predictive and optimization layers around renewable variability and demand shifts.' },
+        { step: '03', title: 'Control integration', desc: 'Link planning logic with dispatch, storage, and operations tooling.' },
+        { step: '04', title: 'Reliability hardening', desc: 'Validate resilience, response times, and operational failover under stress conditions.' }
+      ],
+      deliverables: [
+        'Renewable forecasting and grid orchestration models.',
+        'Live controls and dispatch planning interface.',
+        'Storage and load balancing optimization workflows.',
+        'Operations runbook and reliability playbooks.'
+      ],
+      useCases: [
+        { title: 'Renewable Integration', desc: 'Coordinate solar, wind, and storage around real-time demand.', icon: '⚡' },
+        { title: 'Grid Dispatch', desc: 'Rebalance generation and storage across regional network constraints.', icon: '🔋' },
+        { title: 'Utilities Planning', desc: 'Model reliability, resilience, and future infrastructure scenarios.', icon: '🏙️' }
+      ],
+      techStack: ['Python', 'PyTorch', 'TimescaleDB', 'Kafka', 'Grafana', 'FastAPI', 'React', 'Azure', 'AWS'],
+      industryFocus: 'Renewable energy integration, grid dispatches, and resource planning.',
+      problem: 'Balancing unpredictable power inputs (like wind and solar) across an entire continent’s electric grid requires immediate multi-variable calculation.',
+      serviceRecommended: 'Predictive Quantum Grid Orchestration',
+      headline: 'Orchestrating the Next-Generation Clean Energy Grid',
+      subheading: 'Harmonize fluctuating renewable inputs with industrial load demands. Our platform processes massive regional sensory data to optimize energy storage distribution and eliminate power grid failures.'
+    },
+    cybersecurity: {
+      id: 'cybersecurity',
+      badge: 'Defense',
+      title: 'Enterprise Cybersecurity & Space-Based Data Integrity',
+      tagline: 'Quantum-resistant cryptography and satellite-safe security for ground, orbital, and interconnect systems.',
+      accentText: 'text-rose-400',
+      overview: 'We build post-quantum security layers for telemetry, communications, and enterprise systems so sensitive networks remain resilient as encryption standards evolve.',
+      stats: [
+        { value: 'PQC', label: 'Protection Layer' },
+        { value: '100%', label: 'Key Rotation Workflow' },
+        { value: '24/7', label: 'Threat Monitoring' },
+        { value: 'Zero Trust', label: 'Access Model' }
+      ],
+      capabilities: [
+        { title: 'Post-Quantum Cryptography', desc: 'Deploy lattice-based, hash-based, and code-based algorithms for key exchange and signatures.' },
+        { title: 'QKD & Free-Space Security', desc: 'Design secure protocols for satellite-to-ground and air-gap style channels.' },
+        { title: 'Telemetry Protection', desc: 'Shield sensitive command, control, and data links against interception or tampering.' },
+        { title: 'Key Lifecycle Governance', desc: 'Manage certificate rotation, revocation, auditable policies, and incident response.' }
+      ],
+      engagement: [
+        { step: '01', title: 'Risk review', desc: 'Inspect current cryptography, communications links, and risk exposure for post-quantum threats.' },
+        { step: '02', title: 'Architecture design', desc: 'Define PQC rollout strategy, key management, and deployment boundaries.' },
+        { step: '03', title: 'Implementation', desc: 'Integrate new cryptographic primitives into services, devices, and communications gateways.' },
+        { step: '04', title: 'Validation', desc: 'Perform testing, incident drills, and policy review for operational security.' }
+      ],
+      deliverables: [
+        'Post-quantum security architecture and migration roadmap.',
+        'QKD or PQC gateway implementation for telemetry and communications.',
+        'Key lifecycle and access governance design.',
+        'Security validation and operations documentation.'
+      ],
+      useCases: [
+        { title: 'Satellite Telemetry', desc: 'Secure links between space assets and ground control stations.', icon: '🛰️' },
+        { title: 'Enterprise Systems', desc: 'Protect critical apps, identity, and data infrastructures against future threats.', icon: '🔐' },
+        { title: 'Defense Communications', desc: 'Defend mission-sensitive exchanges across terrestrial and orbital channels.', icon: '🛡️' }
+      ],
+      techStack: ['OpenSSL', 'Bouncy Castle', 'Go', 'Rust', 'Python', 'KMS', 'Vault', 'PKI', 'Zero Trust'],
+      industryFocus: 'Satellite-to-ground telemetry protection and post-quantum cryptography.',
+      problem: 'Emerging quantum hardware threatens standard encryption, putting sensitive terrestrial data networks and military/civilian satellite communication links at extreme risk.',
+      serviceRecommended: 'Quantum Key Distribution (QKD) & Satellite PQC Gateway',
+      headline: 'Building an Absolute Shield Against Quantum Interception',
+      subheading: 'Secure your telemetry from the ground to the exosphere. Our middleware deploys quantum-resistant cryptographic keys designed for free-space and satellite communication, neutralizing advanced brute-force decryption tactics entirely.'
+    },
+    integration: {
+      id: 'integration',
+      badge: 'Integration',
+      title: 'The Industrial Integration Hub',
+      tagline: 'Bridge legacy enterprise and aerospace stacks into quantum-ready cloud ecosystems with a single API gateway.',
+      accentText: 'text-violet-400',
+      overview: 'We help organizations modernize incrementally by connecting existing software, telemetry pipelines, and AI systems to quantum cloud services without wholesale rewrites.',
+      stats: [
+        { value: 'Zero', label: 'Rip-and-Replace' },
+        { value: 'Single', label: 'API Token' },
+        { value: '24/7', label: 'Runtime Support' },
+        { value: '100%', label: 'Legacy Compatibility' }
+      ],
+      capabilities: [
+        { title: 'API Bridge', desc: 'Expose existing systems to quantum runtimes with clean, secure integration layers.' },
+        { title: 'Cloud Migration', desc: 'Modernize data lakes, ETL, and analytics to hybrid cloud and edge deployment models.' },
+        { title: 'Aerospace Connectors', desc: 'Tie telemetry pipelines and mission systems to new compute and orchestration services.' },
+        { title: 'Platform Enablement', desc: 'Give teams the SDKs, docs, and runtime patterns to build with confidence.' }
+      ],
+      engagement: [
+        { step: '01', title: 'Stack audit', desc: 'Review current systems, integrations, dependencies, and modernization goals.' },
+        { step: '02', title: 'Bridge design', desc: 'Map the legacy surface area to new runtime capabilities and API contracts.' },
+        { step: '03', title: 'Deployment', desc: 'Roll out the integration layer, gateways, and automation workflows.' },
+        { step: '04', title: 'Evolution', desc: 'Support adoption, performance tuning, and future service expansion.' }
+      ],
+      deliverables: [
+        'Universal SDK and API bridge for quantum cloud services.',
+        'Legacy integration plan and migration architecture.',
+        'Secure runtime deployment and observability layer.',
+        'Developer onboarding toolkit and operational docs.'
+      ],
+      useCases: [
+        { title: 'Enterprise IT Modernization', desc: 'Connect existing applications to cloud and quantum-ready infrastructure.', icon: '🏢' },
+        { title: 'Aerospace Systems', desc: 'Link telemetry and mission tooling to new analytics and compute stacks.', icon: '🛩️' },
+        { title: 'Cloud-Native Adoption', desc: 'Bridge old workflows into new architecture with minimal disruption.', icon: '🔌' }
+      ],
+      techStack: ['Node.js', 'Python', 'TypeScript', 'FastAPI', 'Docker', 'Kubernetes', 'Azure', 'AWS', 'REST', 'gRPC'],
+      industryFocus: 'Enterprise IT architecture, cloud-native migration, and aerospace systems.',
+      problem: 'Most operations cannot simply discard their legacy software infrastructure to build entirely new quantum pipelines from scratch.',
+      serviceRecommended: 'Universal Tensor-Quantum SDK & API Bridge',
+      headline: 'Plug Your Mission-Critical Stack Direct Into Quantum Cloud Ecosystems',
+      subheading: 'Zero friction. Absolute acceleration. Connect your current enterprise data lakes, aerospace telemetry pipelines, and AI frameworks directly to our fault-tolerant quantum runtime cloud with a single API token.'
     },
     cloud: {
       id: 'cloud',

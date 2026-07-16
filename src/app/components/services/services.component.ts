@@ -38,7 +38,7 @@ interface ServiceItem {
         </div>
 
         <!-- Services Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           @for (service of services; track service.id) {
             <div 
               class="glass-panel glass-panel-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative group overflow-hidden hover:-translate-y-1 hover:shadow-2xl"
@@ -103,47 +103,91 @@ interface ServiceItem {
 export class ServicesComponent {
   services: ServiceItem[] = [
     {
-      id: 'ai',
-      badge: 'Cognitive Computing',
-      title: 'AI Solutions & Models',
-      desc: 'Building bespoke deep learning structures, large language model integrations, semantic search engines, and neural vision networks.',
+      id: 'space-science',
+      badge: 'Space Systems',
+      title: 'Space Science & Deep Space',
+      desc: 'Mission planning, autonomous navigation, and swarm coordination for orbital and interplanetary systems.',
       borderHoverClass: 'hover:border-cyan-500/30',
       iconBgClass: 'bg-cyan-500/10 text-cyan-400',
       accentClass: 'text-cyan-400',
-      features: ['Custom Deep Learning Models', 'Semantic RAG Implementations', 'Predictive Analysis Engines', 'Natural Language Pipelines'],
+      features: ['Trajectory Optimization', 'Autonomous Control', 'Telemetry Intelligence', 'Mission-Ready Simulation'],
       icon: ''
     },
     {
-      id: 'quantum',
-      badge: 'Quantum Systems',
-      title: 'Quantum Algorithms R&D',
-      desc: 'Developing mathematical and computational designs optimized for future quantum processors, solvers, and cryptographic architectures.',
-      borderHoverClass: 'hover:border-violet-500/30',
-      iconBgClass: 'bg-violet-500/10 text-violet-400',
-      accentClass: 'text-violet-400',
-      features: ['Quantum-Ready Math Optimization', 'Tensor Network Simulation', 'Quantum Annealing Algorithms', 'Qubit Circuit Design Support'],
+      id: 'cosmic-data',
+      badge: 'Remote Sensing',
+      title: 'Cosmic Data & Earth Observation',
+      desc: 'Quantum-enhanced signal processing and scientific pipelines for telescope, climate, and satellite intelligence.',
+      borderHoverClass: 'hover:border-sky-500/30',
+      iconBgClass: 'bg-sky-500/10 text-sky-400',
+      accentClass: 'text-sky-400',
+      features: ['Petabyte Data Pipelines', 'Anomaly Detection', 'Multi-Sensor Fusion', 'Scientific Workflows'],
       icon: ''
     },
     {
-      id: 'cloud',
-      badge: 'Scalable Systems',
-      title: 'Cloud-Native Architecture',
-      desc: 'Implementing secure, distributed server systems, automated Kubernetes orchestration, vector stores, and global content scaling.',
+      id: 'biopharma',
+      badge: 'Life Sciences',
+      title: 'Bio-Pharma & Molecular Intelligence',
+      desc: 'High-fidelity molecular simulation, protein folding studies, and therapeutic design acceleration.',
       borderHoverClass: 'hover:border-emerald-500/30',
       iconBgClass: 'bg-emerald-500/10 text-emerald-400',
       accentClass: 'text-emerald-400',
-      features: ['Kubernetes Orchestration', 'Distributed Database Staging', 'Serverless Computations', 'Vulnerability & Sentry Audits'],
+      features: ['Molecular Docking', 'Protein Folding Models', 'Drug Discovery Workflows', 'Bioinformatics Pipelines'],
       icon: ''
     },
     {
-      id: 'software',
-      badge: 'Custom Engineering',
-      title: 'Software Development',
-      desc: 'Developing robust, low-latency applications using Python, Java, C++, Rust, Go, TypeScript and other. Real-time analytic boards and performant database architectures.',
+      id: 'finance',
+      badge: 'Markets',
+      title: 'Quantitative Finance & Risk',
+      desc: 'Real-time risk modeling, Monte Carlo simulation, and volatility analysis tailored for modern markets.',
+      borderHoverClass: 'hover:border-amber-500/30',
+      iconBgClass: 'bg-amber-500/10 text-amber-400',
+      accentClass: 'text-amber-400',
+      features: ['Monte Carlo Engines', 'Portfolio Optimization', 'Fraud & Anomaly Detection', 'Live Market Intelligence'],
+      icon: ''
+    },
+    {
+      id: 'logistics',
+      badge: 'Operations',
+      title: 'Supply Chain & Logistics',
+      desc: 'Large-scale route planning, fleet coordination, and global distribution optimization for unpredictability.',
       borderHoverClass: 'hover:border-indigo-500/30',
       iconBgClass: 'bg-indigo-500/10 text-indigo-400',
       accentClass: 'text-indigo-400',
-      features: ['Python & Java High-Performance Systems', 'Real-Time Analytic Dashboards', 'Microservice Architectures', 'Bespoke Corporate Tools'],
+      features: ['Global Route Optimization', 'Fleet Coordination', 'Constraint Planning', 'Disruption Replanning'],
+      icon: ''
+    },
+    {
+      id: 'energy',
+      badge: 'Infrastructure',
+      title: 'Energy & Smart Grid',
+      desc: 'Predictive grid orchestration for renewable supply, dispatch planning, storage balancing, and resilience.',
+      borderHoverClass: 'hover:border-lime-500/30',
+      iconBgClass: 'bg-lime-500/10 text-lime-400',
+      accentClass: 'text-lime-400',
+      features: ['Renewable Forecasting', 'Demand Balancing', 'Storage Coordination', 'Grid Reliability Planning'],
+      icon: ''
+    },
+    {
+      id: 'cybersecurity',
+      badge: 'Defense',
+      title: 'Cybersecurity & Integrity',
+      desc: 'Post-quantum protections and telemetry shielding for critical enterprise and orbital data channels.',
+      borderHoverClass: 'hover:border-rose-500/30',
+      iconBgClass: 'bg-rose-500/10 text-rose-400',
+      accentClass: 'text-rose-400',
+      features: ['Post-Quantum Cryptography', 'Telemetry Protection', 'Zero Trust Access', 'Key Lifecycle Governance'],
+      icon: ''
+    },
+    {
+      id: 'integration',
+      badge: 'Integration',
+      title: 'Industrial Integration Hub',
+      desc: 'Bridge legacy systems and cloud-native ecosystems into one secure, quantum-ready platform layer.',
+      borderHoverClass: 'hover:border-violet-500/30',
+      iconBgClass: 'bg-violet-500/10 text-violet-400',
+      accentClass: 'text-violet-400',
+      features: ['API Bridge Layers', 'Legacy Modernization', 'Cloud Migration', 'Platform Enablement'],
       icon: ''
     }
   ];
