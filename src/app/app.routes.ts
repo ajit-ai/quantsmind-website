@@ -10,6 +10,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/research/research.component').then(m => m.ResearchComponent)
   },
   {
+    path: 'contact',
+    loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent)
+  },
+  {
     path: 'research/:id',
     loadComponent: () => import('./pages/research-detail/research-detail.component').then(m => m.ResearchDetailComponent)
   },

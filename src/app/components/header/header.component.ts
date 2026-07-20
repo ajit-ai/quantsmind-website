@@ -28,7 +28,7 @@ interface NavItem {
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #22d3ee, #6366f1, #a855f7);
+      background: linear-gradient(90deg, #4f46e5, #6366f1, #7c3aed);
       border-radius: 9999px;
       transition: width 0.3s ease;
     }
@@ -36,19 +36,19 @@ interface NavItem {
       width: 100%;
     }
     .nav-link.nav-active {
-      color: #ffffff;
+      color: #4f46e5;
     }
     .nav-link.nav-active::after {
       width: 100%;
     }
   `],
   template: `
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/5 bg-[#0a0b10]/75 backdrop-blur-md">
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-slate-100 bg-white/80 backdrop-blur-md shadow-xs">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
           <!-- Logo -->
           <a [routerLink]="['/']" class="flex items-center group cursor-pointer">
-            <svg class="w-9 h-9 mr-3 text-cyan-400 transition-transform duration-500 group-hover:rotate-180" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-9 h-9 mr-3 text-indigo-600 transition-transform duration-500 group-hover:rotate-180" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 6" class="opacity-40" />
               <path d="M50 15 L25 50 L50 85 L75 50 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" class="opacity-80" />
               <path d="M25 50 L75 50" stroke="currentColor" stroke-width="1.5" class="opacity-30" />
@@ -60,13 +60,13 @@ interface NavItem {
               <circle cx="50" cy="85" r="4" fill="#10B981" />
               <defs>
                 <radialGradient id="logoGradient" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" transform="translate(50 50) rotate(90) scale(12)">
-                  <stop stop-color="#06b6d4" />
-                  <stop offset="1" stop-color="#8b5cf6" />
+                  <stop stop-color="#4f46e5" />
+                  <stop offset="1" stop-color="#7c3aed" />
                 </radialGradient>
               </defs>
             </svg>
-            <span class="text-xl font-bold font-display tracking-wider text-white">
-              Quants<span class="bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">Mind</span>
+            <span class="text-xl font-bold font-display tracking-wider text-slate-900">
+              Quants<span class="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">Mind</span>
             </span>
           </a>
 
@@ -78,21 +78,21 @@ interface NavItem {
                   [routerLink]="item.link" 
                   [fragment]="item.fragment"
                   [class.nav-active]="isActive(item)"
-                  class="nav-link relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer pb-1"
+                  class="nav-link relative text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors duration-200 cursor-pointer pb-1"
                 >
                   {{ item.label }}
                 </a>
-
+ 
                 @if (item.children) {
-                  <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 absolute left-1/2 top-full z-50 w-[40rem] max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-xl border border-white/10 bg-[#0a0b10]/95 p-3 shadow-2xl shadow-cyan-950/30 backdrop-blur-xl transition-all duration-200">
+                  <div class="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 absolute left-1/2 top-full z-50 w-[40rem] max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-xl border border-slate-100 bg-white p-3 shadow-xl backdrop-blur-xl transition-all duration-200">
                     <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
                       @for (child of item.children; track child.label) {
                         <a
                           [routerLink]="child.link"
-                          class="group/item rounded-lg border border-transparent px-4 py-3 transition-colors duration-200 hover:border-cyan-400/20 hover:bg-white/5"
+                          class="group/item rounded-lg border border-transparent px-4 py-3 transition-colors duration-200 hover:border-indigo-100 hover:bg-slate-50"
                         >
-                          <span class="block text-sm font-semibold text-white">{{ child.label }}</span>
-                          <span class="mt-1 block text-xs leading-relaxed text-gray-400 group-hover/item:text-gray-300">{{ child.description }}</span>
+                          <span class="block text-sm font-semibold text-slate-900 group-hover/item:text-indigo-600">{{ child.label }}</span>
+                          <span class="mt-1 block text-xs leading-relaxed text-slate-500 group-hover/item:text-slate-600">{{ child.description }}</span>
                         </a>
                       }
                     </div>
@@ -144,7 +144,7 @@ interface NavItem {
       <!-- Mobile Menu -->
       <div 
         [class.hidden]="!menuOpen()" 
-        class="md:hidden border-b border-white/5 bg-[#0a0b10]/95 backdrop-blur-lg" 
+        class="md:hidden border-b border-slate-100 bg-white backdrop-blur-lg" 
         id="mobile-menu"
       >
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -153,20 +153,20 @@ interface NavItem {
               <a 
                 [routerLink]="item.link" 
                 [fragment]="item.fragment"
-                [class.text-white]="isActive(item)"
-                [class.bg-white\/5]="isActive(item)"
+                [class.text-indigo-600]="isActive(item)"
+                [class.bg-slate-50]="isActive(item)"
                 (click)="closeMenu()"
-                class="block px-3 py-2.5 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-200"
+                class="block px-3 py-2.5 rounded-md text-base font-medium text-slate-700 hover:text-indigo-600 hover:bg-slate-50 transition-all duration-200"
               >
                 {{ item.label }}
               </a>
               @if (item.children) {
-                <div class="ml-3 mt-1 border-l border-white/10 pl-3">
+                <div class="ml-3 mt-1 border-l border-slate-200 pl-3">
                   @for (child of item.children; track child.label) {
                     <a
                       [routerLink]="child.link"
                       (click)="closeMenu()"
-                      class="block rounded-md px-3 py-2 text-sm font-medium text-gray-400 hover:bg-white/5 hover:text-white transition-colors duration-200"
+                      class="block rounded-md px-3 py-2 text-sm font-medium text-slate-500 hover:bg-slate-50 hover:text-indigo-600 transition-colors duration-200"
                     >
                       {{ child.label }}
                     </a>
@@ -177,10 +177,9 @@ interface NavItem {
           }
           <div class="px-3 py-4">
             <a 
-              [routerLink]="['/']" 
-              fragment="contact"
+              [routerLink]="['/contact']" 
               (click)="closeMenu()"
-              class="w-full text-center block px-4 py-2.5 rounded-md text-base font-medium text-white bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-400 hover:to-indigo-400 transition-all duration-300 shadow-md shadow-cyan-500/20"
+              class="w-full text-center block px-4 py-2.5 rounded-md text-base font-medium text-white bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 transition-all duration-300 shadow-md shadow-indigo-600/20"
             >
               Get Started
             </a>
@@ -270,9 +269,8 @@ export class HeaderComponent {
         }
       ]
     },
-    { label: 'Clients', link: ['/'], fragment: 'testimonials', path: '/' },
     { label: 'Labs', link: ['/research'], path: '/research' },
-    { label: 'Contact', link: ['/'], fragment: 'contact', path: '/' }
+    { label: 'Contact', link: ['/contact'], path: '/contact' }
   ];
 
   constructor(private router: Router) {
